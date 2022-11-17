@@ -16,12 +16,19 @@ function mostrarCartao(indiceCartao){
 
 btnAvancar.addEventListener('click', function() {
 
-    if(cartaoAtual === cartoes.length -1 ) return ;
+    if(cartaoAtual === cartoes.length -1 ) {
+        
+        esconderCartaoSelecionado();
+        cartaoAtual = 0 
+        mostrarCartao(cartaoAtual);
+        return;
+        
+    }
         
     esconderCartaoSelecionado();
  
     cartaoAtual ++;
-    console.log(cartaoAtual)
+    //console.log(cartaoAtual)
     mostrarCartao(cartaoAtual);
 
 })
@@ -29,12 +36,17 @@ btnAvancar.addEventListener('click', function() {
 
 btnVoltar.addEventListener('click', function() {
 
-    if(cartaoAtual === 0 ) return;
-
+    if(cartaoAtual === 0 ){
+        esconderCartaoSelecionado();
+        cartaoAtual = 2
+        mostrarCartao(cartaoAtual);
+        return;
+    }
+   
     esconderCartaoSelecionado();
          
     cartaoAtual --;
-    console.log(cartaoAtual)
+    //console.log(cartaoAtual)
     mostrarCartao(cartaoAtual);
 
 
